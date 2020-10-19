@@ -5,7 +5,7 @@ public class Menuselection {
     public int balance = 100;
     public int deposit;
     Scanner scanner = new Scanner(System.in);
-
+    WashType washType = new WashType();
     public void menu() {
 
         System.out.println("**WELCOME TO THE SUPERSHINE CARWASH!**\n");
@@ -24,9 +24,10 @@ public class Menuselection {
 
         switch (carWashSelection) {
             case 1: {
+            washType.type();
+            int washTypeSelection = scanner.nextInt();
 
             }
-
         }
     }
 }
