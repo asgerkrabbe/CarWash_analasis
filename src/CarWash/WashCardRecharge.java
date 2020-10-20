@@ -1,20 +1,35 @@
 package CarWash;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 
 public class WashCardRecharge  {
 
-    File washCardBalance = new File("WashCardBalance");
-    FileWriter balanceWriter = new FileWriter(washCardBalance,true);
+    FileWriter balanceWriter = new FileWriter("WashCardBalance");
+    File balance = new File("WashCardBalance");
+    Scanner balanceReader = new Scanner(balance);
+    Scanner scanner = new Scanner(System.in);
+
+
 
     public WashCardRecharge() throws IOException {
     }
 
-
     public void recharge () throws IOException {
-        balanceWriter.write("heyoyo");
-    }
+        String currentBalance = null;
+        while (balanceReader.hasNextInt()) {
+            currentBalance = balanceReader.nextLine();
+        }
 
+        assert currentBalance != null;
+        int b = Integer.parseInt(currentBalance);
+        int rechargeAmount = scanner.nextInt();
+        
+
+        int newBalance = rechargeAmount + b;
+
+        balanceWriter.write(newBalance);
+        balanceWriter.close();
+        balanceReader.close();
+    }
 }

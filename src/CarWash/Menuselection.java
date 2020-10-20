@@ -5,9 +5,10 @@ public class Menuselection {
     public int balance = 100;
     public int deposit;
     Scanner scanner = new Scanner(System.in);
-    WashType washType;
-    Wash wash;
-    public void menu(WashType washType) {
+    WashType washType = new WashType();
+    Wash wash = new Wash();
+
+    public void menu() {
 
 
         System.out.println("**WELCOME TO THE SUPERSHINE CARWASH!**\n");
@@ -30,10 +31,10 @@ public class Menuselection {
                 washType.type();
                 int washTypeSelection = scanner.nextInt();
 
-                if (washTypeSelection == 1);{
+                if (washTypeSelection == 1){
                     System.out.println("Economy wash chosen " + wash.getEconomy() + ",- will be conducted from your washcard balance.");
                 }
-                if (washTypeSelection == 2);{
+                if (washTypeSelection == 2){
                     System.out.println("Standard wash chosen " + wash.getStandard() + ",- will be conducted from your washcard balance.");
                 }
                 if (washTypeSelection == 3){
@@ -43,7 +44,6 @@ public class Menuselection {
             }
             case 2: {
                 System.out.println("Enter amount recharge amount (200-1000): ");
-
             }
         }
     }
