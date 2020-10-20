@@ -6,6 +6,7 @@ public class Menuselection {
     public int deposit;
     Scanner scanner = new Scanner(System.in);
     WashType washType = new WashType();
+    Wash wash = new Wash();
     public void menu() {
 
         System.out.println("**WELCOME TO THE SUPERSHINE CARWASH!**\n");
@@ -24,8 +25,19 @@ public class Menuselection {
 
         switch (carWashSelection) {
             case 1: {
-            washType.type();
-            int washTypeSelection = scanner.nextInt();
+                System.out.println("Choose wash type:\n");
+                washType.type();
+                int washTypeSelection = scanner.nextInt();
+
+                if (washTypeSelection == 1);{
+                    System.out.println("Economy wash chosen " + wash.getEconomy() + ",- will be conducted from your washcard balance.");
+                }
+                if (washTypeSelection == 2);{
+                    System.out.println("Standard wash chosen " + wash.getStandard() + ",- will be conducted from your washcard balance.");
+                }
+                if (washTypeSelection == 3){
+                    System.out.println("DeLuxe wash chosen " + wash.getDeLuxe() + ",- will be conducted from your washcard balance.");
+                }
 
             }
         }
