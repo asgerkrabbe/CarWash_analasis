@@ -5,11 +5,11 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        Menuselection menuSelection = new Menuselection();
         WashCardRecharge washCardRecharge = new WashCardRecharge();
+        Menuselection menuSelection = new Menuselection();
         menuSelection.menu();
-        washCardRecharge.recharge();
 
 
+        System.out.println("Don't forget your washcard!");
     }
 }

@@ -5,9 +5,7 @@ import java.util.Scanner;
 
 public class WashCardRecharge  {
 
-    FileWriter balanceWriter = new FileWriter("WashCardBalance");
-    File balance = new File("WashCardBalance");
-    Scanner balanceReader = new Scanner(balance);
+    FileWriter balanceWriter = new FileWriter("WashCardBalance",true);
     Scanner scanner = new Scanner(System.in);
 
 
@@ -16,20 +14,25 @@ public class WashCardRecharge  {
     }
 
     public void recharge () throws IOException {
-        String currentBalance = null;
-        while (balanceReader.hasNextInt()) {
-            currentBalance = balanceReader.nextLine();
-        }
+        File balance = new File("WashCardBalance");
+        Scanner balanceReader = new Scanner(balance);
+        Scanner newBalanceReader = new Scanner(balance);
 
-        assert currentBalance != null;
-        int b = Integer.parseInt(currentBalance);
+        int currentBalance = balanceReader.nextInt();
+        System.out.println("Current balance: " + currentBalance);
+
+        System.out.println("Enter amount recharge amount (200-1000): ");
         int rechargeAmount = scanner.nextInt();
-        
 
-        int newBalance = rechargeAmount + b;
+        int nB = currentBalance + rechargeAmount;
 
-        balanceWriter.write(newBalance);
+        FileWriter balanceWiper = new FileWriter("WashCardBalance");
+
+        balanceWriter.write(Integer.toString(nB));
         balanceWriter.close();
-        balanceReader.close();
+
+        int newBalance = newBalanceReader.nextInt();
+        System.out.println("New balance: " + newBalance);
+
     }
 }
