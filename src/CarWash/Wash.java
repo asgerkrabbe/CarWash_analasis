@@ -34,6 +34,7 @@ public class Wash {
         return deLuxe;
     }
 
+
     public void wash() {
         washType.type();
 
@@ -51,12 +52,11 @@ public class Wash {
             System.out.println("DeLuxe wash chosen " + getDeLuxe() + ",- will be conducted from your washcard balance.");
         }
         stopCarWash.run();
-        System.out.println("Wash complete, remember your washcard!");
     }
 
-    public void Wash() {
-    }
+    public void washCharge() {
 
+    }
 
     @Override
     public String toString() {

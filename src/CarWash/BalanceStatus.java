@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class Stats {
+public class BalanceStatus {
 
     public void balanceReader() throws IOException {
         File balance = new File("WashCardBalance");

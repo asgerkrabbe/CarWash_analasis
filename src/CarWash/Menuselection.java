@@ -8,7 +8,7 @@ public class Menuselection {
     Wash wash = new Wash();
     WashCardRecharge washCardRecharge = new WashCardRecharge();
     StopCarWash stopCarWash = new StopCarWash();
-    Stats status = new Stats();
+    BalanceStatus status = new BalanceStatus();
 
     public Menuselection() throws IOException {
     }
