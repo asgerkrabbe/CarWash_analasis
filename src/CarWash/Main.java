@@ -1,11 +1,14 @@
 package CarWash;
 
+import java.io.IOException;
+
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        WashType washwash = new WashType();
         Menuselection menuSelection = new Menuselection();
-        menuSelection.menu();
-
-
+        WashCardRecharge washCardRecharge = new WashCardRecharge();
+        menuSelection.menu(washwash);
+        washCardRecharge.recharge();
     }
 }
