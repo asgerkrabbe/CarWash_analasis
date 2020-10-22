@@ -4,11 +4,10 @@ import java.util.Scanner;
 
 public class Menuselection {
     Scanner scanner = new Scanner(System.in);
-    WashType washType = new WashType();
     Wash wash = new Wash();
     WashCardRecharge washCardRecharge = new WashCardRecharge();
-    StopCarWash stopCarWash = new StopCarWash();
     BalanceStatus status = new BalanceStatus();
+    Login login = new Login();
 
     public Menuselection() throws IOException {
     }
@@ -26,7 +25,7 @@ public class Menuselection {
         }
         System.out.println("Now choose a wash feature from the following options below:");
         System.out.println("1. \tCarwash\n2. \tWashcard recharge");
-        System.out.println("3.  check balance");
+        System.out.println("3.  check balance\n4. \tAdmin login");
 
         int carWashSelection = scanner.nextInt();
 
@@ -36,7 +35,6 @@ public class Menuselection {
                 break;
             }
             case 2: {
-
                 washCardRecharge.recharge();
                 break;
             }
@@ -44,7 +42,9 @@ public class Menuselection {
                 status.balanceReader();
                 break;
             }
-
+            case 4: {
+                login.adminLogin();
+            }
         }
     }
 }
