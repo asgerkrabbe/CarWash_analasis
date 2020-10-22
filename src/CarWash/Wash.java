@@ -1,5 +1,8 @@
 package CarWash;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Wash {
@@ -13,6 +16,10 @@ public class Wash {
     WashType washType = new WashType();
     Scanner scanner = new Scanner(System.in);
     StopCarWash stopCarWash = new StopCarWash();
+    FileWriter washCharger = new FileWriter("WashCardBalance",true);
+
+    public Wash() throws IOException {
+    }
 
     public int getTime() {
         return time;
@@ -35,7 +42,7 @@ public class Wash {
     }
 
 
-    public void wash() {
+    public void wash() throws IOException {
         washType.type();
 
         System.out.println("Choose wash type:\n");
@@ -44,6 +51,7 @@ public class Wash {
 
         if (washTypeSelection == 1){
             System.out.println("Economy wash chosen " + getEconomy() + ",- will be conducted from your washcard balance.");
+            washChargeEconomy();
         }
         if (washTypeSelection == 2){
             System.out.println("Standard wash chosen " + getStandard() + ",- will be conducted from your washcard balance.");
@@ -54,8 +62,23 @@ public class Wash {
         stopCarWash.run();
     }
 
-    public void washCharge() {
+    public void washChargeEconomy() throws IOException {
+        File balance = new File("WashCardBalance");
+        Scanner balanceReader = new Scanner(balance);
+        Scanner newBalanceReader = new Scanner(balance);
 
+        int currentBalance = balanceReader.nextInt();
+
+        int nB = currentBalance - getEconomy();
+
+        FileWriter balanceWiper = new FileWriter("WashCardBalance");
+
+        washCharger.write(Integer.toString(nB));
+        washCharger.close();
+
+
+        int newBalance = newBalanceReader.nextInt();
+        System.out.println("New balance: " + newBalance);
     }
 
     @Override

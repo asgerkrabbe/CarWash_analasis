@@ -8,8 +8,6 @@ public class WashCardRecharge  {
     FileWriter balanceWriter = new FileWriter("WashCardBalance",true);
     Scanner scanner = new Scanner(System.in);
 
-
-
     public WashCardRecharge() throws IOException {
     }
 
