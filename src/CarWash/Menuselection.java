@@ -7,7 +7,7 @@ public class Menuselection {
     Wash wash = new Wash();
     WashCardRecharge washCardRecharge = new WashCardRecharge();
     BalanceStatus status = new BalanceStatus();
-    Login login = new Login();
+    Admin login = new Admin();
 
     public Menuselection() throws IOException {
     }

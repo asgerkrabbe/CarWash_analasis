@@ -21,14 +21,6 @@ public class Wash {
     public Wash() throws IOException {
     }
 
-    public int getTime() {
-        return time;
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
     public int getEconomy() {
         return economy;
     }
