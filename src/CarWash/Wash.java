@@ -35,10 +35,10 @@ public class Wash {
 
 
     public void wash() throws IOException {
-        washType.type();
+        washType.carWashType();
 
         System.out.println("Choose wash type:\n");
-        washType.type();
+        washType.carWashType();
         int washTypeSelection = scanner.nextInt();
 
         if (washTypeSelection == 1){

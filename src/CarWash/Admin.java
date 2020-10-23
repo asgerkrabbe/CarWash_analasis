@@ -28,14 +28,11 @@ public class Admin {
         FileWriter carWashWriter = new FileWriter("CarWashPrice",true);
         File carWashPrice = new File("CarWashPrice");
         Scanner balanceReader = new Scanner(carWashPrice);
-        ArrayList<String> carWashPriceList = new ArrayList<>();
+        ArrayList<String> washPriceList = new ArrayList<>();
 
         while (balanceReader.hasNextLine()){
-            carWashPriceList.add(balanceReader.nextLine());
+            washPriceList.add(balanceReader.nextLine());
         }
-        System.out.println(carWashPriceList.get(1));
-        //System.out.println(carWashPrice[1]);
-
         //carWashWriter.write(Integer.toString(nB));
         //carWashWriter.close();
     }

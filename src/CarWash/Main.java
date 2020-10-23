@@ -8,8 +8,10 @@ public class Main {
         WashCardRecharge washCardRecharge = new WashCardRecharge();
         Admin admin = new Admin();
         Menuselection menuSelection = new Menuselection();
+        //WashType washType = new WashType();
         menuSelection.menu();
         admin.changeWashPrice();
+        //washType.carWashTypePrice();
 
         System.out.println("Don't forget your washcard!");
     }
