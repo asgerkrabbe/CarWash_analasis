@@ -6,6 +6,26 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class WashType {
+    public WashType() throws IOException {
+        carWashTypePrice();
+    }
+
+    public int getEconomyWash() {
+        return economyWash;
+    }
+
+    public int getStandardWash() {
+        return standardWash;
+    }
+
+    public int getDeLuxeWash() {
+        return deLuxeWash;
+    }
+
+    private int economyWash;
+    private int standardWash;
+    private int deLuxeWash;
+
     public void carWashType() {
         System.out.println("1. Economy wash\n2. Standard wash\n3. DeLuxe Wash");
     }
@@ -23,11 +43,9 @@ public class WashType {
         String standardWashStr = carWashPriceList.get(1);
         String deLuxeWashStr = carWashPriceList.get(2);
 
-
-        int economyWash = Integer.parseInt(economyWashStr);
-        int standardWash = Integer.parseInt(standardWashStr);
-        int deLuxeWash = Integer.parseInt(deLuxeWashStr);
+        economyWash = Integer.parseInt(economyWashStr);
+        standardWash = Integer.parseInt(standardWashStr);
+        deLuxeWash = Integer.parseInt(deLuxeWashStr);
 
     }
-
 }

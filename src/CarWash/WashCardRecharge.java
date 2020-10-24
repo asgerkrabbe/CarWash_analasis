@@ -24,7 +24,7 @@ public class WashCardRecharge  {
 
         int nB = currentBalance + rechargeAmount;
 
-        FileWriter balanceWiper = new FileWriter("WashCardBalance");
+       FileWriter balanceWiper = new FileWriter("WashCardBalance");
 
         balanceWriter.write(Integer.toString(nB));
         balanceWriter.close();
