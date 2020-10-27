@@ -19,18 +19,26 @@ public class WashCardRecharge  {
         int currentBalance = balanceReader.nextInt();
         System.out.println("Current balance: " + currentBalance);
 
-        System.out.println("Enter amount recharge amount (200-1000): ");
-        int rechargeAmount = scanner.nextInt();
+        while(true) {
+            System.out.println("Enter amount recharge amount (200-1000): ");
+            int rechargeAmount = scanner.nextInt();
 
-        int nB = currentBalance + rechargeAmount;
+            if (rechargeAmount >= 200 && rechargeAmount <= 1000) {
+                int nB = currentBalance + rechargeAmount;
 
-       FileWriter balanceWiper = new FileWriter("WashCardBalance");
+                FileWriter balanceWiper = new FileWriter("WashCardBalance");
 
-        balanceWriter.write(Integer.toString(nB));
-        balanceWriter.close();
+                balanceWriter.write(Integer.toString(nB));
+                balanceWriter.close();
 
-        int newBalance = newBalanceReader.nextInt();
-        System.out.println("New balance: " + newBalance);
-
+                int newBalance = newBalanceReader.nextInt();
+                System.out.println("New balance: " + newBalance);
+            }
+            else{
+                System.out.println("Recharge amount too high or low, try again.");
+            continue;
+            }
+            break;
+        }
     }
 }
