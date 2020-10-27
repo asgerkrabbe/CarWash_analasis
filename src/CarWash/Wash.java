@@ -6,9 +6,6 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Wash {
-    private int economy = 50;
-    private int standard = 80;
-    private int deLuxe = 120;
     WashType washType = new WashType();
     Scanner scanner = new Scanner(System.in);
     StopCarWash stopCarWash = new StopCarWash();
