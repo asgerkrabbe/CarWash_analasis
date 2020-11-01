@@ -27,24 +27,30 @@ public class Menuselection {
         System.out.println("1. \tCarwash\n2. \tWashcard recharge");
         System.out.println("3.  check balance\n4. \tAdmin login");
 
-        int carWashSelection = scanner.nextInt();
 
-        switch (carWashSelection) {
-            case 1: {
-                wash.wash();
-                break;
+        do {
+            int carWashSelection = scanner.nextInt();
+
+            switch (carWashSelection) {
+                case 1: {
+                    wash.wash();
+                    break;
+                }
+                case 2: {
+                    washCardRecharge.recharge();
+                    break;
+                }
+                case 3: {
+                    status.balanceReader();
+                    break;
+                }
+                case 4: {
+                    login.adminLogin();
+                }
+                default:
+                    System.out.println("Chosen selection does not exist, please try again.");
+                    break;
             }
-            case 2: {
-                washCardRecharge.recharge();
-                break;
-            }
-            case 3: {
-                status.balanceReader();
-                break;
-            }
-            case 4: {
-                login.adminLogin();
-            }
-        }
+        } while (true);
     }
 }
